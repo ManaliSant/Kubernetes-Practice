@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: db
+  labels: 
+   type: rs
+spec: 
+  selector:
+    matchLabels: 
+     type: app-replica
+
+  replicas: 5
+  
+  template:
+    metadata:
+      name: replica-pod
+      labels: 
+        type: app-replica
+    spec: 
+      containers:
+       - name: replica-cont
+         image: postgres:latest
