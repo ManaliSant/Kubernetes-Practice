@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata: 
-  name: db
+  name: web-server
   labels: 
    type: rs
 spec: 
@@ -19,4 +19,4 @@ spec:
     spec: 
       containers:
        - name: replica-cont
-         image: postgres:latest
+         image: nginx
